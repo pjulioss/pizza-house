@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="flex-center position-ref full-height">
-    {{-- @if (Route::has('login'))
+    @if (Route::has('login'))
         <div class="top-right links">
             @auth
                 <a href="{{ url('/home') }}">Home</a>
@@ -15,11 +15,15 @@
                 @endif
             @endauth
         </div>
-    @endif --}}
+    @endif
 
     <div class="content">
-        <img src="/img/pizza-shop.png" alt="pizza logo">
+        <img src="/img/pizza-shop.png" alt="pizza logo" class="img-logo">
         <div class="title m-b-md">Casa da Pizza</div>
+        <p class="msg">{{session('msg')}}</p>
+        <a href="{{route('pizzas.index')}}">Cardápio</a>
+        <br>
+        <a href="{{route('pizzas.create')}}">Nova pizza</a>
     </div>
 </div>
 
